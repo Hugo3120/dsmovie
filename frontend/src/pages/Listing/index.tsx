@@ -24,17 +24,15 @@ function Listing() {
     });
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=title`)
+        axios.get(`${BASE_URL}/movies?size=12&page=${pageNumber}&sort=id`)
             .then(response => {
-                const data = response.data as MoviePage
+                const data = response.data as MoviePage;
                 setPage(data);
 
             })
 
 
     }, [pageNumber]);
-
-
 
     return (
         <>
@@ -50,15 +48,9 @@ function Listing() {
                     )
 
                     )}
-
-
-
-
                 </div>
 
             </div>
-
-
 
         </>
     );
